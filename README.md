@@ -1,98 +1,126 @@
 # create-vrtw-usgmathe
 
-Create a new project using the **vite-react-ts-tailwind-minimal** template.
+> ⚡ Scaffold a modern React stack in seconds — **Vite + React + TypeScript + TailwindCSS + optional shadcn/ui**
 
-## 🚀 Prerequisites
-
-- Node.js >= 18
-- Git (optional, for initializing a git repository)
-- Recommended: **pnpm**, but the CLI works with npm or yarn as well. The script will detect your package manager automatically.
+No templates. No boilerplate. Just a clean, production-ready setup.
 
 ---
 
-## 🚀 Usage
-
-### Recommended
+## 📦 Quick Start
 
 ```bash
 pnpm create vrtw-usgmathe@latest my-app
+cd my-app
+pnpm dev
 ````
 
-### Alternative
+---
+
+## 🎥 Demo
 
 ```bash
-npx create-vrtw-usgmathe my-app
+pnpm create vrtw-usgmathe my-app
 ```
 
-or
-
-```bash
-npm create vrtw-usgmathe my-app
 ```
+📦 Using pnpm
 
-### CLI Flags
+→ Creating Vite app...
+→ Cleaning files...
+→ Configuring App...
+→ Installing dependencies...
+→ Configuring Vite...
+→ Configuring tsconfig...
+→ Installing shadcn... (optional)
+→ Configuring Prettier...
 
-* `--no-install` → Skip automatic dependency installation
-* `--no-git` or `--git=false` → Skip git initialization
-
-The CLI will detect whether you ran it with **npm**, **pnpm**, or **yarn** and use the same package manager for installing dependencies and shadcn UI.
+✅ Project created successfully!
+```
 
 ---
 
 ## ✨ Features
 
-* Vite
-* React 18
-* TypeScript 5
-* TailwindCSS
-* Prettier + Tailwind sorting
-* Minimal and clean project structure
-* Optional **shadcn UI** integration
+* ⚡ **Vite + React + TypeScript**
+* 🎨 **TailwindCSS (official Vite plugin)**
+* 📦 **`@/` path alias configured**
+* 🧠 **TypeScript properly configured**
+* ✨ **Prettier + Tailwind sorting**
+* 🧩 **Optional shadcn/ui**
+* 🧹 **Clean project (no junk files)**
+* 🤖 **Auto-detects npm or pnpm**
+* 🔒 **Safe file edits using AST (no regex hacks)**
 
 ---
 
-## ✅ What This CLI Does
-
-* Clones the template from GitHub
-* Installs dependencies (optional)
-* Initializes git (optional)
-* Offers to install **shadcn UI** (optional)
-* Prepares everything for development
-
----
-
-## 🛠 Next Steps
-
-After creating your project:
+## ⚙️ CLI Options
 
 ```bash
-# 1. Enter your project folder
-cd my-app
-
-# 2. Install dependencies (if you skipped automatic install)
-pnpm install
-
-# 3. Run development server
-pnpm run dev
+create-vrtw-usgmathe my-app [options]
 ```
 
-If you chose to install **shadcn UI** during setup, it will already be initialized.
-Otherwise, you can manually add it anytime:
+| Option        | Description                |
+| ------------- | -------------------------- |
+| `--no-shadcn` | Skip shadcn/ui setup       |
+| `--yes`       | Skip all prompts (CI mode) |
+
+---
+
+## 🧠 Philosophy
+
+Most starters either:
+
+* ship too much boilerplate
+* rely on outdated templates
+* or break easily when modified
+
+This CLI takes a different approach:
+
+* 🧩 **Programmatic setup instead of templates**
+* 🔍 **AST-based file manipulation (reliable)**
+* 🎯 **Minimal but extensible foundation**
+
+You start clean — and scale your way.
+
+---
+
+## 🛠 What Happens Under the Hood
+
+* Creates a Vite React + TS project
+* Removes unnecessary files
+* Configures TailwindCSS
+* Adds `@/` path alias
+* Updates `tsconfig.json`
+* Replaces default `App.tsx` with a minimal `app.tsx`
+* Updates `main.tsx` using AST
+* Sets up Prettier + Tailwind plugin
+* Optionally installs **shadcn/ui**
+
+---
+
+## 🎨 Adding shadcn/ui later
 
 ```bash
-pnpm dlx shadcn@latest init
+pnpm dlx shadcn@latest init --template vite
 ```
 
-> The CLI will replace your `package manager` with npm, pnpm, or yarn automatically based on how you ran it.
+---
+
+## 📌 Requirements
+
+* Node.js >= 18
+* pnpm (recommended) or npm
 
 ---
 
-## 📦 Template Repository
+## 🤝 Contributing
 
-[https://github.com/usgmathe/vite-react-ts-tailwind-minimal](https://github.com/usgmathe/vite-react-ts-tailwind-minimal)
+PRs are welcome.
+
+If you want to improve the CLI, feel free to open an issue or submit a pull request.
 
 ---
 
-## 📝 License
+## 📄 License
 
 MIT
