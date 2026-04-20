@@ -214,9 +214,8 @@ async function setupTsconfig() {
 
     json.compilerOptions = {
       ...json.compilerOptions,
-      baseUrl: ".",
       paths: {
-        "@/*": ["src/*"],
+        "@/*": ["./src/*"],
       },
     };
 
