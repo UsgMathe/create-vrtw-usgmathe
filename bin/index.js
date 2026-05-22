@@ -226,6 +226,18 @@ async function setupTsconfig() {
   await update(path.join(root, "tsconfig.app.json"));
 }
 
+async function allowPnpmBuilds() {
+  if (!isPnpm) return;
+
+  const workspacePath = path.join(root, "pnpm-workspace.yaml");
+
+  const yaml = `onlyBuiltDependencies:
+  - msw
+`;
+
+  await fs.writeFile(workspacePath, yaml);
+}
+
 async function setupShadcn() {
   let shouldInstall = flags.shadcn;
 
@@ -250,7 +262,7 @@ async function setupShadcn() {
   await runCmd(
     isPnpm ? "pnpm" : "npx",
     isPnpm
-      ? ["dlx", "--allow-build=msw", "shadcn@latest", "init", "--template", "vite"]
+      ? ["dlx", "shadcn@latest", "init", "--template", "vite"]
       : ["shadcn@latest", "init", "--template", "vite"],
     { cwd: root }
   );
@@ -308,8 +320,9 @@ async function run() {
   await installDeps();
   await setupVite();
   await setupTsconfig();
-  await setupShadcn();
   await setupPrettier();
+  await allowPnpmBuilds();
+  await setupShadcn();
   await finalize();
 }
 
