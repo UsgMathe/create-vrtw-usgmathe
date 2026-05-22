@@ -1,6 +1,6 @@
 {
   "name": "create-vrtw-usgmathe",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "CLI to scaffold Vite + React + TypeScript + TailwindCSS projects with optional shadcn/ui.",
   "type": "module",
   "bin": {
