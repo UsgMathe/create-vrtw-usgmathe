@@ -9,9 +9,9 @@ No templates. No boilerplate. Just a clean, production-ready setup.
 ## 📦 Quick Start
 
 ```bash
-pnpm create vrtw-usgmathe@latest my-app
+npm create vrtw-usgmathe@latest my-app
 cd my-app
-pnpm dev
+npm dev
 ````
 
 ---
@@ -19,11 +19,11 @@ pnpm dev
 ## 🎥 Demo
 
 ```bash
-pnpm create vrtw-usgmathe my-app
+npm create vrtw-usgmathe my-app
 ```
 
 ```
-📦 Using pnpm
+📦 Using npm
 
 → Creating Vite app...
 → Cleaning files...
@@ -101,7 +101,7 @@ You start clean — and scale your way.
 ## 🎨 Adding shadcn/ui later
 
 ```bash
-pnpm dlx shadcn@latest init --template vite
+npx shadcn@latest init --template vite
 ```
 
 ---

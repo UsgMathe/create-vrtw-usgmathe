@@ -250,7 +250,7 @@ async function setupShadcn() {
   await runCmd(
     isPnpm ? "pnpm" : "npx",
     isPnpm
-      ? ["dlx", "shadcn@latest", "init", "--template", "vite"]
+      ? ["dlx", "--allow-build=msw", "shadcn@latest", "init", "--template", "vite"]
       : ["shadcn@latest", "init", "--template", "vite"],
     { cwd: root }
   );
