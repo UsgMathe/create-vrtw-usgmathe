@@ -231,13 +231,28 @@ async function allowPnpmBuilds() {
 
   const workspacePath = path.join(root, "pnpm-workspace.yaml");
 
-  const yaml = `onlyBuiltDependencies:
-  - msw
+  let content = "";
+
+  if (await fs.pathExists(workspacePath)) {
+    content = await fs.readFile(workspacePath, "utf8");
+  }
+
+  if (content.includes("allowBuilds:")) {
+    content = content.replace(
+      /allowBuilds:\s*\n\s*msw:\s*.*/m,
+      `allowBuilds:
+  msw: true`
+    );
+  } else {
+    content += `
+
+allowBuilds:
+  msw: true
 `;
+  }
 
-  await fs.writeFile(workspacePath, yaml);
+  await fs.writeFile(workspacePath, content);
 }
-
 async function setupShadcn() {
   let shouldInstall = flags.shadcn;
 
